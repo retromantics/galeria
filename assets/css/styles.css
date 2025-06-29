@@ -1,0 +1,99 @@
+    /* Estilos de galería */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+#modalContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 90vw;
+    width: 400px;
+    max-height: 90vh;
+    box-sizing: border-box;
+}
+
+#modalImg {
+    max-width: 80vw;
+    max-height: 60vh;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    padding: 8px 12px;
+    z-index: 2;
+}
+
+#closeBtn {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    #modalContent {
+        flex-direction: column;
+        width: 95vw;
+        padding: 8px;
+    }
+    .modal-btn {
+        font-size: 2.5rem;
+        padding: 4px 8px;
+    }
+    #modalImg {
+        max-width: 90vw;
+        max-height: 40vh;
+    }
+    #closeBtn {
+        top: 4px;
+        right: 8px;
+        font-size: 2.5rem;
+    }
+}
